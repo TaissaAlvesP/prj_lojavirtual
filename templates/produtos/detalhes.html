@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>Detalhes do Produto</h1>
+<img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+<h3><a href="{{ produto.get_absolute_url }}">{{ produto.nome
+}}</a>&nbspR${{ produto.preco }}</h3>
+
+<!--Detalhes de determinado produto-->
+<p>{{ produto.descricao|safe|linebreaksbr }}</p>
+
+<form action="{% url 'carrinho:adicionar_ao_carrinho' produto.id %}" method="post">
+    {{ form_produto_carrinho }}
+    {% csrf_token %}
+    <input type="submit" value="Adicionar ao carrinho">
+</form>
+
+{% endblock conteudo %}

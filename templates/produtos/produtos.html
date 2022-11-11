@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+<h2>Categorias</h2>
+<a href="/produtos">Todas as categorias</a>
+{% for categoria in lista_categorias %}
+    <a href="{{ categoria.get_absolute_url }}">{{ categoria.nome }}</a>
+{% endfor %}
+
+<h2>Produtos</h2>
+<div class="produtos__container">
+    {% for produto in lista_produtos %}
+        <div class="card produto__card">
+            <a href="{{ produto.get_absolute_url }}">
+                <img class="card-img-top" src="{{ produto.imagem.url }}" alt="Card image cap">
+            </a>
+            <div class="card-body">
+                <p class="card-title">{{ produto.nome }}</p>
+                <p> R${{ produto.preco }}</p>
+                <a href="{{ produto.get_absolute_url }}" class="btn btnprimary">Ver mais detalhes...</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock conteudo %}

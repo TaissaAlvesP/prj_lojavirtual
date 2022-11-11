@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block conteudo %}
+
+{% if carrinho|length == 0 %}
+<h2>Seu Carrinho está vazio!</h2>
+<a href="{% url 'produtos:listar_produtos' %}">Comprar</a>
+{% else %}
+<h2>Seu Carrinho de Compras:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Remover</th>
+        <th>Preço unitário</th>
+        <th>Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in carrinho %}
+    {% with produto=item.produto %}
+    <tr>
+        <td>{{ produto.nome }}</td>
+        <td>
+            <form action="{% url 'carrinho:adicionar_ao_carrinho' produto.id %}" method="post">
+                {% csrf_token %}
+                {{ item.formulario_adicionar_produto_ao_carrinho.quantidade }}
+                {{ item.formulario_adicionar_produto_ao_carrinho.atualizar }}
+                <input type="submit" value="Atualizar">
+            </form>
+        </td>
+        <td>
+            <a href="{% url 'carrinho:remover_do_carrinho' produto.id %}">Remover</a>
+        </td>
+        <td>R$ {{ item.preco }}</td>
+        <td>R$ {{ item.subtotal }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr>
+        <td><b>Total</b></td>
+        <td><b>R$ {{ carrinho.get_total_geral }}</b></td>
+    </tr>
+    </tbody>
+</table>
+<a href="{% url 'produtos:listar_produtos' %}">Comprar mais produtos</a>
+<a href="{% url 'pedidos:criar_pedido' %}"> Finalizar</a>
+
+{% endif %}
+{% endblock %}
+

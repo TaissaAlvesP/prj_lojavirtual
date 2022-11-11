@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h1>Finalizar Compra</h1>
+    <h3>Seu Pedido:</h3>
+    <ul>
+        {% for item in carrinho %}
+            <li>
+                {{ item.produto.nome }}: {{ item.quantidade }} x R$ {{ item.preco }} =
+                <span>R$ {{ item.subtotal }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <p>Total Geral: R$ {{ carrinho.get_total_geral }}</p>
+    <form action="." method="post" class="order">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Enviar pedido</button>
+    </form>
+{% endblock %}

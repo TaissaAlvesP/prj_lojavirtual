@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<h1>Entre em contato!</h1>
+<h3>Dados do Produto</h3>
+<h3>Categoria do Produto</h3>
+<h3>Categoria: {{ categoria }}</h3>
+<!--<img src="{{ imagem }}" height="150px" width="auto">-->
+<img src="{% static 'img/backpack.jpg' %}" height="150px" width="auto">
+<p>{{nome}} - R$ {{preco}}</p>
+<p>{{descricao}}</p>
+{% endblock conteudo %}
