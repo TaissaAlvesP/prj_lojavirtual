@@ -1,9 +1,11 @@
+#Usuário poderá preencher os dados e posteriormente finalizar o pedido
+
 from django import forms
 from .models import Pedido
 
 
 class FormCriarPedido(forms.ModelForm):
-
+#order_field em cada item do formulário para possibilitar o css em pedidos.
     nome = forms.CharField(label='nome', max_length=100,
                            widget=forms.TextInput(attrs={
                                'class': 'order__field',

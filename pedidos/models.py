@@ -22,6 +22,7 @@ class Pedido(models.Model):
     pago = models.BooleanField(default=False)
 
     class Meta:
+        # o símbolo '-' ordena em ordem decrescente
         ordering = ('-data_criacao',)
 
     def __str__(self):
@@ -36,6 +37,7 @@ class Pedido(models.Model):
 
 
 class ItemPedido(models.Model):
+    #é possível obter todas as instâncias de itemPedido relacionadas em cada pedido
     pedido = models.ForeignKey(Pedido, related_name='itens', on_delete=models.CASCADE)
     produto = models.ForeignKey(Produto, related_name='itens_pedido', on_delete=models.CASCADE)
     preco = models.DecimalField(max_digits=10, decimal_places=2)
@@ -44,6 +46,7 @@ class ItemPedido(models.Model):
     def __str__(self):
         return 'id ItemPedido #' + str(self.id)
 
+    #Total geral do preço dos itens em pedidos
     def get_sub_total(self):
         return self.preco * self.quantidade
 

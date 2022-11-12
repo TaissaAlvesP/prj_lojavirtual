@@ -11,9 +11,11 @@
         {% endfor %}
     </ul>
     <p>Total Geral: R$ {{ carrinho.get_total_geral }}</p>
+    <!--order para possibilitar o css nos pedidos-->
     <form action="." method="post" class="order">
         {% csrf_token %}
         {{ form.as_p }}
+        <!--Envia o pedido usando o botão (bootstrap)-->
         <button type="submit" class="btn btn-primary">Enviar pedido</button>
     </form>
 {% endblock %}

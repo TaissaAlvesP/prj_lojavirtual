@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #incluir no sistema
     'stdimage',
     'main',
     'produtos',
