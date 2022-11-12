@@ -5,7 +5,8 @@
 <h1>Detalhes do Produto</h1>
 <br>
 <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
-<h3><a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>&nbspR${{ produto.preco }}</h3>
+
+<h3><br><a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>&nbspR${{ produto.preco }}</h3>
 
 <!--Recurso Safe é usado para evitar vulnerabilidades por injeções de códigos maliciosos-->
 <!--Detalhes de determinado produto-->
