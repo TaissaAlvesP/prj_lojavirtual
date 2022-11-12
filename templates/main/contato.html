@@ -1,5 +1,20 @@
-
-{% extends "base.html"%}
+{% extends "base.html" %}
 {% block conteudo %}
 <h1>Entre em contato!</h1>
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li> {{ message }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+<!--esse contact é para possibilitar aplicar css no formulário-->
+    <form method="POST" class="contact">
+        {% csrf_token %}
+
+        <!--reinderiza automaticamente o formulário de contato-->
+        {{ form.as_p }}
+        <button type="submit">Enviar Mensagem</button>
+    </form>
+{% endif %}
 {% endblock conteudo %}

@@ -149,3 +149,17 @@ ID_CARRINHO = 'carrinho'
 #Quando o usuário fizer login ou logout ele será redirecionado para a página inicial
 LOGIN_REDIRECT_URL = 'index'
 LOGOUT_REDIRECT_URL = 'index'
+
+
+#esse formulário será utilizado para que os usuários possam entrar em contato via e-mail
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'seu-email@gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = 'sua-senha'
+
+#Atenção: As configurações acima são para contas do Gmail. Para que funcionem é necessário alterar as
+# configurações de segurança da conta Google a autorizar o “Acesso de app menos seguro”.
+
+
