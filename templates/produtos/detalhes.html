@@ -5,11 +5,14 @@
 <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
 <h3><a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>&nbspR${{ produto.preco }}</h3>
 
+<!--Recurso Safe é usado para evitar vulnerabilidades por injeções de códigos maliciosos-->
 <!--Detalhes de determinado produto-->
 <p>{{ produto.descricao|safe|linebreaksbr }}</p>
 
 <form action="{% url 'carrinho:adicionar_ao_carrinho' produto.id %}" method="post">
     {{ form_produto_carrinho }}
+
+    <!--csrf é obrigatória em todos os forms Django e proteje contra ataques maliciosos-->
     {% csrf_token %}
     <input type="submit" value="Adicionar ao carrinho">
 </form>

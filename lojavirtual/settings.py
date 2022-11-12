@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #incluir no sistema
+    #incluir no sistema as aplicações criadas (foram usadas django-admin startapp "nome da aplicação" no prompit para criar)
     'stdimage',
     'main',
     'produtos',
@@ -145,6 +145,7 @@ MEDIA_URL = '/upload/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Chave para localizar o repositório que vai armazenar os dados em sessões
 ID_CARRINHO = 'carrinho'
 
 #Quando o usuário fizer login ou logout ele será redirecionado para a página inicial

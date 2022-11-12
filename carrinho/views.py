@@ -5,7 +5,7 @@ from produtos.models import Produto
 from .carrinho import Carrinho
 from .forms import FormAdicionarProdutoAoCarrinho
 
-
+#redireciona para a página detalhes do carrinho já com o produto adicionado.
 @require_POST
 def adicionar_ao_carrinho(request, id_produto):
     carrinho = Carrinho(request)
@@ -28,10 +28,16 @@ def remover_do_carrinho(request, id_produto):
 
 
 def detalhes_carrinho(request):
+
+    #Instância o objeto do tipo carrinho carregando todos os dados  do carrinho presente na sessão(onde é armazenado os dados)
     carrinho = Carrinho(request)
+
+    #Varre o carrinho, para atualizar ele sempre que ocorrer modificações
     for item in carrinho:
         item['formulario_adicionar_produto_ao_carrinho'] = \
             FormAdicionarProdutoAoCarrinho(initial={'quantidade': item['quantidade'], 'atualizar': True})
+
+    #Todos os dados do carrinho são enviado para a página que irá mostrar os detalhes do carrinho
     return render(request, 'carrinho/detalhes_carrinho.html', {'carrinho': carrinho})
 
 # Create your views here.

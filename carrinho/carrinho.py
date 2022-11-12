@@ -4,14 +4,25 @@ from produtos.models import Produto
 
 class Carrinho:
 
+    #init armazena a sessão atual em um atributo (sessão é como o django armazena dados)
     def __init__(self, request):
         self.__sessao = request.session
+
+        #localiza a sessão cujo objeto corresponde a chave ID_CARRINHO definida em arquivo.settings.py e guarda
+        #na varável carrinho
         carrinho = self.__sessao.get(settings.ID_CARRINHO)
+
+        #caso a varíavel carrinho não tenha sido utilizada, cria um carrinho vazio para ser preenchido
         if not carrinho:
             carrinho = self.__sessao[settings.ID_CARRINHO] = {}
+
+        #O estado do carrinho é salvo na varíavel self._carrinho
         self.__carrinho = carrinho
 
     def adicionar(self, produto, quantidade=1, atualizar_quantidade=False):
+
+        #converte o id para string pq o Django ultiza um formato que só permite chaves do tipo string para
+        #serializar os dados.
         id_produto = str(produto.id)
         if id_produto not in self.__carrinho:
             self.__carrinho[id_produto] = {

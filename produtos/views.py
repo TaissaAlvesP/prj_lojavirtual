@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Produto, Categoria
+
+#Esse import é para adicionar produtos ao carrinho
 from carrinho.forms import FormAdicionarProdutoAoCarrinho
 
 
@@ -26,6 +28,8 @@ def detalhar_produto(request, id_produto, slug_produto):
                                 slug=slug_produto,
                                 ativo=True)
 
+    #A função retorna a renderização da página apresentando os detalhes do produto utlizando
+    #os dados fornecidos do produto selecionado e o formúlario (form_produto_carrinho)
     form_adicionar_produto_ao_carrinho = FormAdicionarProdutoAoCarrinho()
 
     contexto = {

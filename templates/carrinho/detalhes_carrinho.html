@@ -24,6 +24,8 @@
         <td>
             <form action="{% url 'carrinho:adicionar_ao_carrinho' produto.id %}" method="post">
                 {% csrf_token %}
+
+                <!--Esses dois itens são responsáveis, respectivamente, por inserir e mostrar o botão de Atualizar na página de detalhes do carrinho-->
                 {{ item.formulario_adicionar_produto_ao_carrinho.quantidade }}
                 {{ item.formulario_adicionar_produto_ao_carrinho.atualizar }}
                 <input type="submit" value="Atualizar">
