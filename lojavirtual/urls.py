@@ -22,9 +22,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+#Arquivo de rotas, se for digitado o "nome/" ele vai ser redirecionado para essa página "nome"
+#Se não for digitado "nome/" ficar só ' '(vazio), vai direto para o main(onde direciona para a página inicial)
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('contas/', include('django.contrib.auth.urls')),
     #para qualquer rota ' ', deve ser incluido o arquivo de rotas da aplicação core(main.urls)
     path('', include('main.urls')),
     path('produtos/', include('produtos.urls', namespace='produtos')),

@@ -1,0 +1,18 @@
+<!--Por padrão o Django busca os templates de login dentro de registration, por isso essa pasta
+Esse template cria uma página de login-->
+
+{% extends "base.html" %}
+{% block conteudo %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Informe seus dados</h1>
+
+        <label>Usuário:</label>
+        <input type="text" id="username" name="username" placeholder="Informe seu usuário" required autofocus>
+        <label>Senha:</label>
+        <input type="password" id="password" name="password" placeholder="Informe sua senha" required>
+
+        <button type="submit">Acessar</button>
+        <p>&copy; {% now 'Y'%}</p>
+</form>
+{% endblock conteudo %}

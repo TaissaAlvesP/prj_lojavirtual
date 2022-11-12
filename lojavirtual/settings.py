@@ -69,6 +69,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                #deixar o carrinho acessíveç
+                'carrinho.context_processors.carrinho',
             ],
         },
     },
@@ -142,3 +145,7 @@ MEDIA_URL = '/upload/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ID_CARRINHO = 'carrinho'
+
+#Quando o usuário fizer login ou logout ele será redirecionado para a página inicial
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'

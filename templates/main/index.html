@@ -1,12 +1,14 @@
 {% extends "base.html" %}
-{% load static %}
 {% block conteudo %}
-<h1>Entre em contato!</h1>
-<h3>Dados do Produto</h3>
-<h3>Categoria do Produto</h3>
-<h3>Categoria: {{ categoria }}</h3>
-<!--<img src="{{ imagem }}" height="150px" width="auto">-->
-<img src="{% static 'img/backpack.jpg' %}" height="150px" width="auto">
-<p>{{nome}} - R$ {{preco}}</p>
-<p>{{descricao}}</p>
+<h1>Página Principal</h1>
+
+<!--Caso o usúario esteja conectado, aparece uma mensagem de boas vindas, se ele estiver
+anônimo aparece um link para ele efetuar o login caso queira.-->
+    {% if user.is_anonymous %}
+        <h3>Não conectado {{ user.get_name }}</h3>
+        <a href="{% url 'login' %}">Login</a>
+    {% else %}
+        <h3>Seja bem vindo(a) {{ user.username }}</h3>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% endif %}
 {% endblock conteudo %}
