@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
+<br>
 <h1>Detalhes do Produto</h1>
+<br>
 <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
 <h3><a href="{{ produto.get_absolute_url }}">{{ produto.nome }}</a>&nbspR${{ produto.preco }}</h3>
 

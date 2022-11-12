@@ -5,15 +5,19 @@
 <h2>Seu Carrinho está vazio!</h2>
 <a href="{% url 'produtos:listar_produtos' %}">Comprar</a>
 {% else %}
-<h2>Seu Carrinho de Compras:</h2>
+<h2><br>Seu Carrinho de Compras:</h2>
+
+<!--a tag br quebra a linha-->
+<br>
 <table>
     <thead>
     <tr>
         <th>Produto</th>
         <th>Quantidade</th>
-        <th>Remover</th>
-        <th>Preço unitário</th>
-        <th>Subtotal</th>
+        <!-- a tag &nbsp obriga o html a dar espaço-->
+        <th>&nbsp Remover</th>
+        <th>&nbsp &nbsp  Preço unitário</th>
+        <th>&nbsp &nbsp  Subtotal</th>
     </tr>
     </thead>
     <tbody>
@@ -32,20 +36,21 @@
             </form>
         </td>
         <td>
-            <a href="{% url 'carrinho:remover_do_carrinho' produto.id %}">Remover</a>
+            <a href="{% url 'carrinho:remover_do_carrinho' produto.id %}">&nbsp Remover</a>
         </td>
-        <td>R$ {{ item.preco }}</td>
-        <td>R$ {{ item.subtotal }}</td>
+        <td>&nbsp &nbsp R$ {{ item.preco }}</td>
+        <td>&nbsp &nbsp R$ {{ item.subtotal }}</td>
     </tr>
     {% endwith %}
     {% endfor %}
     <tr>
-        <td><b>Total</b></td>
-        <td><b>R$ {{ carrinho.get_total_geral }}</b></td>
+        <td><b><br>Total</b></td>
+        <td><b><br>R$ {{ carrinho.get_total_geral }}</b></td>
     </tr>
     </tbody>
 </table>
-<a href="{% url 'produtos:listar_produtos' %}">Comprar mais produtos</a>
+<br>
+<a href="{% url 'produtos:listar_produtos' %}">Comprar mais produtos &nbsp &nbsp &nbsp &nbsp </a>
 <!--Rota para a Funcionalidade do botão finalizar em carrinho(assim que finalizar o carrinho te direciona para criar pedido)-->
 <a href="{% url 'pedidos:criar_pedido' %}"> Finalizar</a>
 

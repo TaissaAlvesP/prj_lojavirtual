@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block conteudo %}
-
-<h2>Categorias</h2>
-<a href="/produtos">Todas as categorias</a>
+<br>
+<h3>Categorias</h3>
+<a href="/produtos">Todas as categorias &nbsp </a>
 {% for categoria in lista_categorias %}
-    <a href="{{ categoria.get_absolute_url }}">{{ categoria.nome }}</a>
+    <a href="{{ categoria.get_absolute_url }}">{{ categoria.nome }} &nbsp </a>  &nbsp
+
 {% endfor %}
 
-<h2>Produtos</h2>
+
+<h3><br> Produtos</h3>
 <div class="produtos__container">
     {% for produto in lista_produtos %}
         <div class="card produto__card">
