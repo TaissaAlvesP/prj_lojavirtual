@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-ipbl0ol51v8+umql31#8hn34i^7z42xb%!*+rksj$*jkpn6(1r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#'*' ACEITA CHAMADAS DE SISTEMAS DE QUALQUER DOMÍNIO
 ALLOWED_HOSTS = ['*']
 
 
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #incluir no sistema as aplicações criadas (foram usadas django-admin startapp "nome da aplicação" no prompit para criar)
+    #incluir no sistema as aplicações criadas (foram usadas django-admin startapp "nome da aplicação" no prompit para criar) para
+    #que o Django reconheça essas aplicações
     'stdimage',
     'main',
     'produtos',
@@ -127,6 +129,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+#SÃO UASDOS "STATIC_URL = '/static/' e STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)" PARA QUE SEJA
+#POSSÍVEL UTILIZR ARQUIVOS ESTÁTICOS, COMO CSS E IMAGENS NO Django.
+
 
 STATIC_URL = 'static/'
 

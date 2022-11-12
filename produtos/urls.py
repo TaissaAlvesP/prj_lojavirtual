@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import listar_produtos, detalhar_produto
 
+#EVITAR NOMES DUPLICADOS
 app_name = 'produtos'
 
 urlpatterns = [

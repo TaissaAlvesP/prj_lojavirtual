@@ -21,7 +21,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-
+#ESSES NAMESPACE É PARA EVITAR ROTAS DUPLICADAS(NOMES DE ROTAS DUPLICADOS)
 #Arquivo de rotas, se for digitado o "nome/" ele vai ser redirecionado para essa página "nome"
 #Se não for digitado "nome/" ficar só ' '(vazio), vai direto para o main(onde direciona para a página inicial)
 urlpatterns = [

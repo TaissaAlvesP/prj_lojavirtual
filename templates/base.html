@@ -1,3 +1,6 @@
+<!--VAI SER HERDADO DAQUI A BASE PARA OS TEMPLATES(TODOS EM QUE ESTIVER EXTENDS BASE SEGUEM O PADRÃO CRIADO AQUI)-->
+
+<!--load static É O QUE POSSIBILITA O CARREGAMENTO DE TODOS OS ARQUIVOS ESTÁTICOS, COMO CSS, IMAGENS E JAVA-->
 {% load static %}
 <!DOCTYPE html>
 <!--Carrega os arquivos estáticos, como imagens, folhas de estilo...-->
@@ -18,7 +21,11 @@
 
 </head>
 <body>
+
+<!--PERMITE INCLUSÃO DE CÓDIGO PARA UMA MELHOR ORGANIZAÇÃO DE MODULARIZAÇÃO DAS PÁGINAS-->
 {% include 'barra_navegacao.html' %}
+
+<!--BLOCK CONTEUDO E ENDBLOCK É PARA DELIMITAR O CONTEÚDO INSERIDO EM CADA UMA DAS PÁGINAS-->
 <div class ="container-fluid">
     {% block conteudo %}
     {% endblock conteudo %}
