@@ -6,7 +6,8 @@ Todas as páginas vão mostrar a situação do carrinho, seestá vazio ou o que 
   <a href="/">Página Principal</a>   --
   <a href="/produtos">Produtos</a>   --
   <a href="/contato">Entre em contato</a>   --
-  <a href="/sobre">Sobre nós</a>
+  <a href="/sobre">Sobre nós</a>    --
+    <a href="{% url 'login' %}">Login</a>
   {% if not user.is_anonymous %}
     <h3>Links Administrativos:</h3>
     <ul>

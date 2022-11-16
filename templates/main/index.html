@@ -20,7 +20,6 @@
     anônimo aparece um link para ele efetuar o login caso queira.-->
         {% if user.is_anonymous %}
             <h5>Não conectado {{ user.get_name }}</h5>
-            <a href="{% url 'login' %}">Login</a>
         {% else %}
             <h3>Seja bem vindo(a) {{ user.username }}</h3>
             <a href="{% url 'logout' %}">Logout</a>
