@@ -16,6 +16,11 @@
      width: 15rem;
      padding: 10px;
      border-radius : 10%;
-
-
+     border-color: black;
+     border-width: 7px;
 }
+
+a{
+    color: var(--cor3);
+}
+
