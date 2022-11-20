@@ -7,7 +7,7 @@ nav{background-color:var(--cor5);
 height : 30px;
 color: azure;
 }
-a{color: var(--cor3);
+a{color: var(--cor1);
 }
 p,li,h1,h3,h5{color: var(--cor3);
 font-family: "Times New Roman";
@@ -22,4 +22,9 @@ img{width: 49%;
 --cor3: #383a42;
 --cor4: #70ee9c;
 --cor5: #ca5310;
+}
+
+@media(width: 800px){
+
+
 }
