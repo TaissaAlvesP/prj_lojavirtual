@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block conteudo %}
 <br>
-<h3>Categorias</h3>
+<h1>Categorias</h1>
 <a href="/produtos">Todas as categorias &nbsp </a>
 {% for categoria in lista_categorias %}
     <a href="{{ categoria.get_absolute_url }}">{{ categoria.nome }} &nbsp </a>  &nbsp
