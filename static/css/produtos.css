@@ -4,23 +4,22 @@
      margin-right: auto;
      display: flex;
      flex-wrap: wrap;
-
+     justify-content: space-evenly;
 }
 .produto__img {
      width: 150px;
      border-radius : 30%;
-
 }
 .produto__card {
      margin: 5px;
      width: 15rem;
      padding: 10px;
-     border-radius : 10%;
-     border-color: black;
-     border-width: 7px;
+     border-radius: 10%;
+     border-color: var(--cor1);
+     border-width: 3px;
 }
 
-a{
+a {
     color: var(--cor3);
 }
 

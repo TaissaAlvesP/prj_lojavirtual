@@ -3,12 +3,14 @@
 }
 
 nav {
-    height: 30px;
+    display: flex;
     color: lightgoldenrodyellow;
     font-family: "Helvetica";
     text-align: center;
     font-size: 26px;
     letter-spacing: 5px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 a {
@@ -16,17 +18,15 @@ a {
     font-family: "Helvetica";
 }
 
-p,
-li,
-h1,
-h3,
-h5 {
+p, li {
     color: var(--cor3);
-    font-family: "Times New Roman";
+    font-size: 16px;
+    font-family: "Helvetica";
 }
 
 h1 {
-   font-family: "Copperplate Gothic";
+    font-family: "Copperplate Gothic";
+    padding: 10px;
 }
 
 img {
